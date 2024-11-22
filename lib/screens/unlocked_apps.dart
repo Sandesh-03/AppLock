@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:app_lock_flutter/executables/controllers/method_channel_controller.dart';
 import 'package:app_lock_flutter/executables/controllers/password_controller.dart';
+import 'package:app_lock_flutter/models/application_model.dart';
 import 'package:app_lock_flutter/widgets/confirmation_dialog.dart';
 import 'package:device_apps/device_apps.dart';
 import 'package:flutter/material.dart';
@@ -27,9 +28,9 @@ class UnlockedAppScreen extends StatelessWidget {
         return false;
       },
       child: Scaffold(
-        backgroundColor: Theme.of(context).backgroundColor,
+        backgroundColor: Theme.of(context).colorScheme.surface,
         appBar: AppBar(
-          backgroundColor: Theme.of(context).backgroundColor,
+          backgroundColor: Theme.of(context).colorScheme.surface,
           leading: Padding(
             padding: const EdgeInsets.all(6.0),
             child: Container(
@@ -72,7 +73,7 @@ class UnlockedAppScreen extends StatelessWidget {
           centerTitle: true,
           title: Text(
             "AppLock",
-            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   color: Colors.white,
                 ),
           ),
@@ -186,7 +187,8 @@ class UnlockedAppScreen extends StatelessWidget {
                       padding: EdgeInsets.zero,
                       itemCount: appsController.unLockList.length,
                       itemBuilder: (context, index) {
-                        Application app = appsController.unLockList[index];
+                        ApplicationDataModel app = appsController.unLockList[index];
+
                         return Padding(
                           padding: const EdgeInsets.symmetric(
                             horizontal: 10,
@@ -250,14 +252,14 @@ class UnlockedAppScreen extends StatelessWidget {
                                         app.appName,
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodyText1!
+                                            .bodyLarge!
                                             .copyWith(color: Colors.white),
                                       ),
                                       Text(
                                         "${app.versionName}",
                                         style: Theme.of(context)
                                             .textTheme
-                                            .subtitle1!
+                                            .titleMedium!
                                             .copyWith(
                                               color: Colors.white,
                                               fontSize: 12,

@@ -12,7 +12,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-
+  win32: ^5.0.4   
+  archive: ^3.3.7
   
   cupertino_icons: ^1.0.2
   google_fonts: ^5.0.0
@@ -33,13 +34,14 @@ dependencies:
   flutter_switch: ^0.3.2
   change_app_package_name: ^1.1.0
   file: ^6.1.4
+  pattern_lock:
+  local_auth:
  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-.
   flutter_lints: ^2.0.1
 
 

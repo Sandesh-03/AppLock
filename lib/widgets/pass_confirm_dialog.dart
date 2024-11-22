@@ -25,6 +25,7 @@ class PasswordCorfirmDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    // ignore: deprecated_member_use
     return WillPopScope(
       onWillPop: () async {
         Navigator.pop(context, false);
@@ -68,7 +69,7 @@ class PasswordCorfirmDialog extends StatelessWidget {
                             autofocus: true,
                             style: Theme.of(context)
                                 .textTheme
-                                .subtitle1!
+                                .titleMedium!
                                 .copyWith(color: Colors.white),
                             onChanged: (value) {
                               Fluttertoast.cancel();
@@ -94,7 +95,7 @@ class PasswordCorfirmDialog extends StatelessWidget {
                               hintText: 'Enter Passcode...',
                               labelStyle: Theme.of(context)
                                   .textTheme
-                                  .subtitle1!
+                                  .titleMedium!
                                   .copyWith(color: Colors.white),
                               isCollapsed: true,
                               filled: true,

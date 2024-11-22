@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: CustomTheme.dark,
       home: const SplashPage(),
+     
     );
   }
 }
